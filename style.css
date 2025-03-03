@@ -31,6 +31,7 @@ nav ul {
     justify-content: center;
     background: rgba(15, 15, 15, 0.9);
     padding: 15px;
+    border-bottom: 2px solid #b22222;
 }
 
 nav ul li {
@@ -41,11 +42,12 @@ nav ul li a {
     text-decoration: none;
     color: #e6c07b;
     font-size: 1.2em;
-    transition: color 0.3s;
+    transition: color 0.3s, text-shadow 0.3s;
 }
 
 nav ul li a:hover {
     color: #ffcc00;
+    text-shadow: 0 0 10px rgba(255, 204, 0, 0.8);
 }
 
 .banner {
@@ -94,6 +96,7 @@ footer {
     padding: 25px;
     background: rgba(10, 10, 10, 0.9);
     color: #b8a47e;
+    border-top: 2px solid #b22222;
 }
 
 @keyframes fadeIn {
