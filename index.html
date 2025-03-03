@@ -3,72 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Howaboutno - WoW Private Server</title>
+    <title>Howaboutno - Dark Fantasy WoW Server</title>
     <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
 </head>
 <body>
     <header>
-        <h1>Howaboutno - World of Warcraft Private Server</h1>
+        <h1>Howaboutno - A Dark Fantasy World of Warcraft Server</h1>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#register">Register</a></li>
-                <li><a href="#shop">Shop</a></li>
                 <li><a href="#trailer">Trailer</a></li>
+                <li><a href="#register">Register</a></li>
+                <li><a href="#store">Store</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
-
+    
     <section id="home" class="banner">
-        <h2>Welcome to Howaboutno!</h2>
-        <p>Experience the best WoW private server with custom content and a great community.</p>
+        <h2>Welcome to the ultimate WoW private server experience!</h2>
+        <p>Join the battle and carve your legacy in a world of darkness.</p>
         <button onclick="showAlert()">Join Now</button>
     </section>
-
-    <section id="register">
-        <h2>Register for an Account</h2>
+    
+    <section id="trailer" class="banner">
+        <h2>Official Trailer</h2>
+        <div class="trailer-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/IBHL_-biMrQ" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
+    
+    <section id="register" class="banner">
+        <h2>Register Now</h2>
         <form id="registerForm">
             <input type="text" id="username" placeholder="Username" required>
             <input type="email" id="email" placeholder="Email" required>
             <input type="password" id="password" placeholder="Password" required>
-            <button type="submit">Sign Up</button>
+            <button type="submit">Register</button>
         </form>
         <p id="registerMessage"></p>
     </section>
-
-    <section id="shop">
-        <h2>Shop</h2>
-        <p>Buy exclusive items and support the server!</p>
+    
+    <section id="store" class="banner">
+        <h2>Support the Server</h2>
+        <p>Purchase exclusive items and gear to enhance your adventure.</p>
+        <button>Visit Store</button>
     </section>
-
-    <section id="trailer">
-        <h2>Watch Our Trailer</h2>
-        <iframe width="560" height="315" src="https://www.youtube.com/watch?v=IBHL_-biMrQ" frameborder="0" allowfullscreen></iframe>
-    </section>
-
+    
     <footer>
-        <p>&copy; 2025 Howaboutno. Not affiliated with Blizzard Entertainment.</p>
+        <p>&copy; 2025 Howaboutno. All Rights Reserved.</p>
     </footer>
     
-    <script>
-        function showAlert() {
-            alert("Welcome to Howaboutno! Get ready for an epic adventure!");
-        }
-
-        document.getElementById("registerForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            let username = document.getElementById("username").value;
-            let email = document.getElementById("email").value;
-            let password = document.getElementById("password").value;
-            if (username && email && password) {
-                document.getElementById("registerMessage").innerText = "Registration successful! Welcome, " + username + "!";
-                document.getElementById("registerMessage").style.color = "#c69b6d";
-            } else {
-                document.getElementById("registerMessage").innerText = "Please fill out all fields.";
-                document.getElementById("registerMessage").style.color = "red";
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
+
