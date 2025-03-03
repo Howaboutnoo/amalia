@@ -1,98 +1,64 @@
-body {
-    background: url('https://wallpaperaccess.com/full/1896492.jpg') no-repeat center center fixed;
-    background-size: cover;
-    color: #ddd;
-    font-family: 'Garamond', serif;
-    text-align: center;
-    animation: fadeIn 1.5s ease-in;
+document.addEventListener("DOMContentLoaded", function() {
+    showAlert();
+    setupNavHoverEffects();
+    setupTrailer();
+    setupFormValidation();
+    setupButtonAnimations();
+});
+
+function showAlert() {
+    alert("Welcome to Howaboutno! Prepare for an epic adventure!");
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+function setupNavHoverEffects() {
+    let navLinks = document.querySelectorAll("nav ul li a");
+    navLinks.forEach(link => {
+        link.addEventListener("mouseover", () => {
+            link.style.color = "gold";
+        });
+        link.addEventListener("mouseout", () => {
+            link.style.color = "#c69b6d";
+        });
+    });
 }
 
-header {
-    background: rgba(0, 0, 0, 0.85);
-    padding: 20px;
-    font-size: 26px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    animation: slideDown 1s ease-out;
-    border-bottom: 3px solid #c69b6d;
+function setupTrailer() {
+    const trailerFrame = document.createElement("iframe");
+    trailerFrame.width = "560";
+    trailerFrame.height = "315";
+    trailerFrame.src = "https://www.youtube.com/embed/IBHL_-biMrQ";
+    trailerFrame.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+    trailerFrame.allowFullscreen = true;
+    document.getElementById("trailer").appendChild(trailerFrame);
 }
 
-@keyframes slideDown {
-    from { transform: translateY(-100%); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
+function setupFormValidation() {
+    document.getElementById("registerForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        let username = document.getElementById("username").value.trim();
+        let email = document.getElementById("email").value.trim();
+        let password = document.getElementById("password").value.trim();
+        let messageBox = document.getElementById("registerMessage");
+        
+        if (username && email && password) {
+            messageBox.innerText = "Registration successful! Welcome, " + username + "!";
+            messageBox.style.color = "#c69b6d";
+        } else {
+            messageBox.innerText = "Please fill out all fields.";
+            messageBox.style.color = "red";
+        }
+    });
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 20px;
-}
-
-nav ul li a {
-    color: #c69b6d;
-    text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s ease-in-out;
-}
-
-nav ul li a:hover {
-    color: gold;
-}
-
-.banner {
-    padding: 50px;
-    background: rgba(0, 0, 0, 0.7);
-    border-radius: 10px;
-    display: inline-block;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
-    max-width: 600px;
-    margin: 40px auto;
-}
-
-button {
-    background: linear-gradient(45deg, #c69b6d, #a87e4e);
-    border: none;
-    padding: 12px 25px;
-    font-size: 20px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-    color: #fff;
-}
-
-button:hover {
-    background: linear-gradient(45deg, #a87e4e, #7a5a3a);
-    transform: scale(1.1);
-}
-
-form input {
-    display: block;
-    margin: 10px auto;
-    padding: 12px;
-    width: 280px;
-    border: 2px solid #c69b6d;
-    background: rgba(0, 0, 0, 0.6);
-    color: #fff;
-    font-size: 16px;
-    border-radius: 5px;
-}
-
-footer {
-    margin-top: 50px;
-    padding: 15px;
-    background: rgba(0, 0, 0, 0.9);
-    font-size: 14px;
-    border-top: 3px solid #c69b6d;
+function setupButtonAnimations() {
+    let buttons = document.querySelectorAll("button");
+    buttons.forEach(button => {
+        button.addEventListener("mouseover", () => {
+            button.style.transform = "scale(1.1)";
+            button.style.transition = "0.3s";
+        });
+        button.addEventListener("mouseout", () => {
+            button.style.transform = "scale(1)";
+        });
+    });
 }
