@@ -23,8 +23,14 @@ document.addEventListener("DOMContentLoaded", () => {
             const password = document.getElementById("password").value.trim();
             const message = document.getElementById("registerMessage");
 
-            if (username === "" || email === "" || password === "") {
+            if (!username || !email || !password) {
                 message.textContent = "All fields are required!";
+                message.style.color = "red";
+                return;
+            }
+
+            if (password.length < 6) {
+                message.textContent = "Password must be at least 6 characters long.";
                 message.style.color = "red";
                 return;
             }
@@ -36,7 +42,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Interactive Join Now button
-    document.querySelector("button").addEventListener("click", () => {
-        alert("Welcome to Howaboutno! The Dark Fantasy Awaits...");
-    });
+    const joinButton = document.getElementById("joinButton");
+    if (joinButton) {
+        joinButton.addEventListener("click", () => {
+            alert("Welcome to Howaboutno! The Dark Fantasy Awaits...");
+        });
+    }
 });
